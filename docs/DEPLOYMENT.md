@@ -13,21 +13,29 @@
 ## 构建
 ```bash
 npm install
-npm run build     # astro build → dist/
+npm run build     # astro build && node scripts/shot.mjs → dist/
 npm run check     # astro check
 npm run preview
+npm run shot      # 只重截预览图（需要 dist 已存在）
 ```
 
-## Cloudflare Pages 配置（同源 agent-world-landing，去掉截图依赖）
+## 预览图管线（与 agent-world-landing 同款）
+`scripts/shot.mjs` 在 `astro build` 之后起一个 `dist/` 静态服务，用 Playwright（1280×800 @2x）
+截取两种语言的首屏，产出 `dist/preview-en.png` 与 `dist/preview-zh.png`——同一份图既作
+og:image / twitter:image，也是 bayjf 主站产品卡片的封面（`https://zeus.bayjf.com/preview-*.png`）。
+预览图属于构建产物，不进版本库。首次构建前需 `npx playwright install chromium`。
+
+## Cloudflare Pages 配置（与 agent-world-landing 一致）
 | 配置项 | 值 |
 |---|---|
 | Production branch | `main` |
-| Build command | `npm run build` |
+| Build command | `npx playwright install chromium && npm run build` |
 | Build output directory | `dist` |
-| Environment variables | `NODE_VERSION = 22` |
+| Environment variables | `NODE_VERSION = 22`、`PLAYWRIGHT_BROWSERS_PATH = 0` |
 
-与 agent-world-landing 的差别：本项目没有 `scripts/shot.mjs` 构建时截图，所以构建命令不带
-`npx playwright install chromium`，也不需要 `PLAYWRIGHT_BROWSERS_PATH`。
+`npx playwright install chromium` 保证 CI 的 `npm install` 不会漏装浏览器内核；
+`PLAYWRIGHT_BROWSERS_PATH = 0` 让它装进项目目录，避开系统路径权限问题。
+2026-09-21 已通过 API 把构建命令与两个环境变量写入项目（production + preview 同步）。
 
 **分支策略**：日常开发在 `dev`，合进 `main` 才发生产；`dev` 等其他分支只产出 preview 部署
 （`https://dev.zeus-landing.pages.dev`）。
@@ -66,18 +74,24 @@ https://github.com/settings/installations 把 `zeus-landing` 加入 Cloudflare P
 `POST /zones/{zone_id}/dns_records`，此后同类绑定就能一次跑完。
 
 ## 发布后验证
-1. `/` 与 `/zh/` 双语首页可访问，`<title>` 与语言切换正常。
-2. `robots.txt`、`sitemap-index.xml` 可访问，且域名与 `src/consts.ts` 的 `SITE_URL` 一致。
-3. `favicon.svg` 可访问；React island 正常加载。
-4. 自定义域名 `zeus.bayjf.com` 解析 + 证书生效后，五种路径逐一复验。
+1. `/` 与 `/zh/` 双语首页可访问，`<title>` 与语言切换正常（根目录英文、`/zh/` 中文）。
+2. `preview-en.png` / `preview-zh.png` 可访问，且内容分别对应英文 / 中文首屏
+   （bayjf 主站产品卡片直接引用这两个地址）。
+3. `brand/zeus-mark.svg`、`robots.txt`（含 Sitemap 行）、`sitemap-index.xml` 可访问，
+   域名与 `src/consts.ts` 的 `SITE_URL` 一致。
+4. `favicon.svg` 可访问；React island 正常加载。
+5. 自定义域名 `zeus.bayjf.com` 解析 + 证书生效后，以上路径逐一复验。
 
-## 已知缺口（不影响站点上线，待补）
-- **OG 预览图**：`src/consts.ts` 的 `OG_IMAGE` 指向 `/preview-en.png`、`/preview-zh.png`，
-  但 `public/` 下没有这两个文件，页面 `og:image` / `twitter:image` 目前指向 404。
-  agent-world-landing 的做法是构建时 Playwright 截图（`scripts/shot.mjs`），本项目未接这条管线。
-- **品牌标记**：`BRAND_MARK = /brand/zeus-mark.svg` 用于 JSON-LD `Organization.logo`，
-  `public/brand/` 目前是空目录。
-- **robots.txt**：没有 `Sitemap:` 行（agent-world-landing 有，指向 sitemap-index.xml）。
+## 2026-09-21 已闭合的缺口
+- **OG 预览图**：接入 `scripts/shot.mjs` + playwright `^1.62.1`，`npm run build` 现产出
+  `dist/preview-en.png` / `dist/preview-zh.png`（2560×1600），线上 `/preview-*.png` 已 200。
+- **品牌标记**：补上 `public/brand/zeus-mark.svg`（盾形外壳 + 数据环 + 闪电，配色取自 favicon），
+  JSON-LD `Organization.logo` 不再是 404。
+- **robots.txt**：补齐 AI 爬虫白名单与 `Sitemap: https://zeus.bayjf.com/sitemap-index.xml`。
+
+## 仍缺（继续对齐 agent-world-landing 时再补）
+- `public/llms.txt` / `public/llms-en.txt`（GEO 资产，agent-world-landing 有）
+- `src/pages/privacy.astro`、`src/pages/zh/privacy.astro` 与对应 terms 页
 
 ## 改域名时的同步点
 - `src/consts.ts` 的 `SITE_URL`
