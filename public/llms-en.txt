@@ -1,0 +1,126 @@
+# Zeus
+
+> An operating system built on your own data directory, where many agents work as your vassals:
+> for individuals, a harbor for memory and an inheritable treasure map; for companies, a plug-in
+> virtual department that grows with the business.
+
+- Site: https://zeus.bayjf.com (English) · https://zeus.bayjf.com/zh/ (简体中文)
+- Source: https://github.com/bayernjf/zeus
+- Status: v0.1, early. The core ships as a zero-runtime-dependency TypeScript library; HTTP transport,
+  deployment and MCP transport are not wired yet. This site is the product landing page; the access
+  channel is not open yet.
+
+## One-line definition
+
+**Zeus is an operating system built on your own data directory, where many agents work in concert:
+for individuals, a harbor for memory and an inheritable treasure map; for companies, a plug-in virtual
+department that grows with the business.**
+
+## Mission
+
+1. Data sovereignty stays with the user: point Zeus at a folder and it stands up; take the folder away
+   and Zeus is replaceable.
+2. Capability can be assembled, hardened and passed on — recruit, mentor, sediment.
+3. The user faces one door only: Zeus orchestrates every product and agent behind it.
+
+## Design philosophy (the constitution)
+
+- **The user is the base, the product is a plug-in (reverse lock-in).** The user names a data directory;
+  the directory is the database; the product exposes data through interfaces for its own agents and for
+  outside systems. Backups are a first-class citizen. Belonging comes from "you may leave any time, and
+  you choose to stay."
+- **The treasure map is the recovery protocol.** Zeus stores an encrypted manifest plus recovery
+  instructions, never the treasure itself. The diary is a narrative backup of memory; inheritance is a
+  recovery protocol with authorisation and triggers.
+- **Three tenets: MCP, Skill, A2A.** MCP connects the world, Skill compounds capability, A2A organises
+  collaboration. They are not a feature list but the only postures any capability may enter through.
+- **One engine, two regimes.** Personal and enterprise editions share every primitive; only governance
+  differs — single sovereign plus inheritance, versus multi-tenant with roster, audit and onboarding.
+
+## Glossary
+
+| Concept | Meaning |
+| --- | --- |
+| Realm | One user-named directory and its interfaces; Personal Realm or Enterprise Realm |
+| Vault | The managed, backup-covered data set inside a realm |
+| Map | An encrypted manifest plus recovery instructions — not the treasure, but how to find it |
+| Diary | Narrative backup of memory: emotional value plus replayability |
+| Agent | A recruitable unit of execution with a role, capability bounds and onboarding state |
+| Mentor | The agent that briefs a new hire or a new agent: culture, context, responsibilities |
+| Team | The organisational structure of agents; supports recruiting and A2A collaboration |
+| Skill | An installable, hardenable, teachable capability pack |
+| Connector | Integration with an outside system over MCP |
+| Delegation | A2A task dispatch with war-dispatch reports flowing back, external agents included |
+| Inheritance | Handing a map or realm to your heirs under preset authorisation (later stage; involves law and key custody) |
+| Driver | The default human role: supervise, steer, decide — not hand-execute |
+
+## Two realms
+
+| Dimension | Personal | Enterprise |
+| --- | --- | --- |
+| Data realm | Single sovereign | Multi-tenant: org / department / individual |
+| Core narrative | Harbor, treasure map, inheritance | Virtual department, mentor, harbor |
+| Agent relation | A private staff | Roster with hierarchy and human oversight |
+| Backup | Personal strategy | Organisational continuity plus inherited permissions |
+| Time to value | Self-guided is fine | Must work on day one |
+| Compliance | Privacy | Audit, permissions, data never leaves the domain |
+
+Personal and enterprise realms can coexist on one machine, separated by a **data diode**: without
+explicit authorisation the personal realm never enters the company and the enterprise realm never
+leaves the organisation.
+
+## Five-layer architecture
+
+```
+Narrative   Treasure map · Diary · Mentor · Harbor · Inheritance   Emotional value / belonging
+Collaborate Team · A2A delegation · Oversight deck                 A society of agents
+Grow        Skill packs · Mentor onboarding · Agent registry        Capability
+Connect     MCP connectors · External agents · Vassal products      Connection
+Data        Realm directory · Vault · Map manifest · Backups        Sovereignty base
+```
+
+## Protocol requirements
+
+- **Data interface**: a connected realm must expose standard read / write / retrieve interfaces. Every
+  agent connects to the data layer first and talks capability second.
+- **MCP**: outside systems expose resources / tools / prompts; the enterprise side demands auditable,
+  revocable access.
+- **Skill**: a skill pack declares its inputs, permissions and dependencies; it can be installed,
+  versioned, and taught by a mentor to a new agent or employee.
+- **A2A**: every agent — external or vassal — publishes an Agent Card (identity, capabilities, endpoint,
+  auth). Tasks are accepted, status is reported back, war dispatches flow home, and anything that needs
+  a human is escalated. Humans keep the final power to interrupt, redirect and decide.
+
+## Product matrix: enfeoffment, not absorption
+
+The existing matrix — agent-world, job-agent, agent-dev, pr-helper, atlas, loom, plus the showcase site
+bayjf — keeps its own repositories, deployments and personalities, and answers to Zeus through one
+**Vassal Protocol**: register (publish an agent card), accept (Zeus dispatches work; the product becomes
+a headless capability), report back (war dispatches return to Zeus for presentation). The user only ever
+faces Zeus. bayjf turns from a product gallery into Zeus's roll of recruitable generals. Rollout order:
+pr-helper goes first.
+
+## Current state (v0.1)
+
+The core exists as a pure TypeScript library: A2A types with vassal extensions, a vassal registry
+(fealty checks, health probes, revocation), a roster projector, a dispatcher (JSON-RPC + SSE, data diode
+with policy-based redaction, dispatch blocked for revoked vassals, audit sink), an oversight deck
+(input-required escalations, approve / reject), a read-only personal realm (connect / manifest / search /
+read with traversal and symlink guards) and a read-only MCP stdio scaffold. HTTP transport, deployment
+and MCP transport are not wired yet.
+
+## What makes it different
+
+- Data sovereignty is architectural, not a promise in a privacy policy: the directory is the base, the
+  product is replaceable.
+- The treasure map ties emotional value to executable recovery actions — every story maps to a real move.
+- The three tenets force convergence: any capability must state whether it is MCP, Skill or A2A.
+- Humans stay the driver: interrupt, redirect and decide are top-level powers, not "AI suggests, human
+  takes the blame."
+- The data diode keeps personal and enterprise realms apart unless explicitly authorised.
+
+## Access
+
+Seats are limited and go first to individuals and teams with a real multi-agent workflow. The landing
+page carries an access form (currently a front-end demo that collects nothing until the real channel
+opens).
