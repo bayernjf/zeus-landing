@@ -2,7 +2,7 @@
 
 Zeus 产品落地页：以你的目录为王座，Agent 皆是你的封臣。
 
-- 线上（规划）：https://zeus.bayjf.com （English）· https://zeus.bayjf.com/zh/ （简体中文）
+- 线上：https://zeus.bayjf.com （English）· https://zeus.bayjf.com/zh/ （简体中文）
 - 产品主仓库：`zeus/`（与本目录平级，见 `zeus/docs/product-portrait.md`）
 
 ## 技术栈
@@ -30,7 +30,46 @@ npm run dev
 npm run build
 ```
 
-产物在 `dist/`，含 `index.html`、`zh/index.html`、`404.html` 与 sitemap。
+`astro build` 之后会自动跑 `scripts/shot.mjs`：在 `dist/` 上起静态服务，用 Playwright 截取两种
+语言的首屏，产出 `dist/preview-en.png` 与 `dist/preview-zh.png`（1280×800 @2x）——同一份图既是
+页面的 og:image，也是 bayjf 主站产品卡片的封面。预览图不入库，每次构建现生成，所以改了首屏视觉
+不用手动重截。首次构建前装一次浏览器内核：
+
+```bash
+npx playwright install chromium
+```
+
+其他脚本：
+
+```bash
+npm run preview   # 预览 dist
+npm run check     # astro check 类型检查
+npm run shot      # 只重截预览图（需要 dist 已存在）
+```
+
+产物在 `dist/`，含 `index.html`、`zh/index.html`、`404.html`、双语预览图与 sitemap。
+
+## 部署到 Cloudflare Pages（Git 集成）
+
+Pages 项目 `zeus-landing` 已连接 GitHub 仓库 `bayernjf/zeus-landing`：推送到 `main` 自动构建发布，
+`dev` 等其他分支只产出 preview 部署（配置与 agent-world-landing 同款）：
+
+- Production branch：`main`
+- Build command：`npx playwright install chromium && npm run build`
+- Build output directory：`dist`
+- Environment variables：`NODE_VERSION = 22`、`PLAYWRIGHT_BROWSERS_PATH = 0`
+
+域名：`zeus-landing.pages.dev` + 自定义域名 `zeus.bayjf.com`。完整配置、首次部署过程与验证清单见
+[docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md)。
+
+## SEO / GEO
+
+- 每种语言独立的 title / description（`src/i18n/ui.ts` 的 `meta.*`），canonical + 三条 hreflang
+- `@astrojs/sitemap` 生成带 hreflang 互指的 sitemap
+- 构建时截图产出 og:image（`scripts/shot.mjs`），同时作为 bayjf 主站卡片封面
+- `public/robots.txt` 显式放行 GPTBot、ClaudeBot、PerplexityBot、CCBot 等 AI 爬虫
+- `public/llms.txt`（中文）与 `public/llms-en.txt`（英文）自述产品定义、三纲、两种数据域、
+  五层架构与封臣协议，供答案引擎直接引用
 
 ## 项目约定
 

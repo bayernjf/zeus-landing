@@ -1,0 +1,82 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hud from "../../components/Hud.astro";
+import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n";
+import { SOCIAL } from "../../consts";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const home = lang === "zh" ? "/zh/" : "/";
+---
+
+<Layout title={t("legal.terms.metaTitle")} description={t("legal.terms.metaDesc")}>
+  <Hud />
+  <main class="doc">
+    <div class="shell">
+      <article class="panel panel--riveted doc__panel">
+        <p class="stencil">{t("legal.terms.stencil")}</p>
+        <h1>{t("legal.terms.h1")}</h1>
+        <p class="doc__stamp">{t("legal.terms.updated")}</p>
+
+        <div class="doc__body">
+          <section>
+            <h2>{t("legal.terms.s1.title")}</h2>
+            <p>{t("legal.terms.s1.body")}</p>
+          </section>
+
+          <section>
+            <h2>{t("legal.terms.s2.title")}</h2>
+            <p>{t("legal.terms.s2.body")}</p>
+          </section>
+
+          <section>
+            <h2>{t("legal.terms.s3.title")}</h2>
+            <p>{t("legal.terms.s3.body")}</p>
+          </section>
+
+          <section>
+            <h2>{t("legal.terms.s4.title")}</h2>
+            <p>{t("legal.terms.s4.body")}</p>
+          </section>
+
+          <section>
+            <h2>{t("legal.terms.s5.title")}</h2>
+            <p>{t("legal.terms.s5.body")}</p>
+          </section>
+
+          <section>
+            <h2>{t("legal.terms.s6.title")}</h2>
+            <p>{t("legal.terms.s6.body")}</p>
+          </section>
+
+          <section>
+            <h2>{t("legal.terms.s7.title")}</h2>
+            <p>{t("legal.terms.s7.body")}</p>
+          </section>
+
+          <section>
+            <h2>{t("legal.terms.s8.title")}</h2>
+            <p>{t("legal.terms.s8.body")}</p>
+          </section>
+
+          <section>
+            <h2>{t("legal.terms.s9.title")}</h2>
+            <p>{t("legal.terms.s9.body")}</p>
+          </section>
+
+          <section>
+            <h2>{t("legal.terms.s10.title")}</h2>
+            <p>
+              {t("legal.terms.s10.pre")}<a href={SOCIAL.github}>{t("legal.terms.s10.link")}</a>{t("legal.terms.s10.mid")}<a
+                href={`mailto:${SOCIAL.email}`}>{SOCIAL.email}</a>{t("legal.terms.s10.post")}
+            </p>
+          </section>
+        </div>
+
+        <a class="btn btn--ghost doc__back" href={home}>{t("legal.back")}</a>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</Layout>
