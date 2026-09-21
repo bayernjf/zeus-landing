@@ -1,0 +1,147 @@
+---
+// Cta — access request terminal
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<section id="cta">
+  <div class="shell">
+    <div class="panel panel--riveted cta">
+      <div class="panel__bar">
+        <span>{t("cta.bar")}</span>
+        <span class="led" data-c="power" />
+      </div>
+      <div class="cta__body">
+        <div class="cta__copy">
+          <span class="eyebrow">{t("cta.eyebrow")}</span>
+          <h2 class="cta__title">{t("cta.title")}</h2>
+          <p class="cta__sub">{t("cta.sub")}</p>
+          <ul class="cta__list">
+            <li>{t("cta.list1")}</li>
+            <li>{t("cta.list2")}</li>
+            <li>{t("cta.list3")}</li>
+            <li>{t("cta.list4")}</li>
+          </ul>
+        </div>
+        <form class="cta__form" method="post" action="#" novalidate>
+          <label class="cta__field">
+            <span class="cta__label">{t("cta.email")}</span>
+            <input type="email" name="email" required placeholder="commander@base.io" />
+          </label>
+          <label class="cta__field">
+            <span class="cta__label">{t("cta.size")}</span>
+            <select name="size">
+              <option>{t("cta.size1")}</option>
+              <option>{t("cta.size2")}</option>
+              <option>{t("cta.size3")}</option>
+              <option>{t("cta.size4")}</option>
+            </select>
+          </label>
+          <button type="submit" class="btn cta__submit">
+            {t("cta.submit")}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </button>
+          <p class="cta__note">{t("cta.note")}</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta { overflow: hidden; }
+  .cta__body {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 44px;
+    padding: 40px 40px 44px;
+    background:
+      radial-gradient(ellipse 60% 80% at 85% 30%, rgba(255, 176, 32, 0.06), transparent 70%),
+      var(--steel-850);
+  }
+  .cta__title {
+    margin-top: 12px;
+    font-size: clamp(24px, 3.2vw, 34px);
+  }
+  .cta__sub {
+    margin-top: 16px;
+    max-width: 48ch;
+    color: var(--ink-dim);
+  }
+  .cta__list {
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .cta__list li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 13.5px;
+    color: var(--ink-dim);
+  }
+  .cta__list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 8px;
+    width: 8px; height: 8px;
+    background: var(--power);
+    box-shadow: 0 0 8px var(--power);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  }
+
+  .cta__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-self: center;
+  }
+  .cta__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cta__label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .cta__form input,
+  .cta__form select {
+    padding: 12px 14px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--steel-900);
+    border: 1px solid var(--steel-600);
+    box-shadow: var(--bevel-deep);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .cta__form input::placeholder { color: var(--ink-faint); }
+  .cta__form input:focus,
+  .cta__form select:focus {
+    border-color: var(--power);
+    box-shadow: var(--bevel-deep), 0 0 0 1px rgba(255, 176, 32, 0.3);
+  }
+  .cta__submit { margin-top: 4px; justify-content: center; }
+  .cta__note {
+    font-family: var(--mono);
+    font-size: 10px;
+    line-height: 1.5;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 860px) {
+    .cta__body {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 26px 22px 30px;
+    }
+  }
+</style>

@@ -1,0 +1,109 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<section id="dual">
+  <div class="shell">
+    <span class="stencil">{t("dual.bar")}</span>
+    <h2 class="h-sec">{t("dual.title")}</h2>
+    <p class="sub-sec">{t("dual.sub")}</p>
+
+    <div class="dual">
+      <article class="panel dual-card dual-card--personal">
+        <div class="panel__bar">
+          <span>{t("dual.personal.tag")}</span>
+          <span class="led" data-c="power" aria-hidden="true"></span>
+        </div>
+        <div class="dual-card__body">
+          <h3 class="dual-card__title">{t("dual.personal.title")}</h3>
+          <p class="dual-card__desc">{t("dual.personal.desc")}</p>
+          <ul class="dual-card__list">
+            <li>{t("dual.personal.p1")}</li>
+            <li>{t("dual.personal.p2")}</li>
+            <li>{t("dual.personal.p3")}</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="panel dual-card dual-card--enterprise">
+        <div class="panel__bar">
+          <span>{t("dual.enterprise.tag")}</span>
+          <span class="led" data-c="data" aria-hidden="true"></span>
+        </div>
+        <div class="dual-card__body">
+          <h3 class="dual-card__title">{t("dual.enterprise.title")}</h3>
+          <p class="dual-card__desc">{t("dual.enterprise.desc")}</p>
+          <ul class="dual-card__list">
+            <li>{t("dual.enterprise.p1")}</li>
+            <li>{t("dual.enterprise.p2")}</li>
+            <li>{t("dual.enterprise.p3")}</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dual {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .dual-card { overflow: hidden; }
+  .dual-card__body {
+    padding: 28px 26px 30px;
+    background: linear-gradient(180deg, var(--steel-850), var(--steel-900));
+  }
+  .dual-card--personal .dual-card__title { color: var(--power); }
+  .dual-card--enterprise .dual-card__title { color: var(--data); }
+  .dual-card__title {
+    font-size: 20px;
+    letter-spacing: -0.01em;
+  }
+  .dual-card__desc {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--ink-dim);
+    line-height: 1.7;
+  }
+  .dual-card__list {
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dual-card__list li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+  .dual-card--personal .dual-card__list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 7px;
+    width: 9px; height: 9px;
+    background: var(--power);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    box-shadow: 0 0 8px var(--power);
+  }
+  .dual-card--enterprise .dual-card__list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 7px;
+    width: 9px; height: 9px;
+    background: var(--data);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    box-shadow: 0 0 8px var(--data);
+  }
+
+  @media (max-width: 860px) {
+    .dual { grid-template-columns: 1fr; }
+  }
+</style>

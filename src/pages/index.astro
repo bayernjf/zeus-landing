@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hud from "../components/Hud.astro";
+import Hero from "../components/Hero.astro";
+import ThreeTenets from "../components/ThreeTenets.astro";
+import Stack from "../components/Stack.astro";
+import DualMode from "../components/DualMode.astro";
+import TreasureMap from "../components/TreasureMap.astro";
+import Cta from "../components/Cta.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Hud />
+  <main>
+    <Hero />
+    <div data-reveal><ThreeTenets /></div>
+    <div data-reveal><Stack /></div>
+    <div data-reveal><DualMode /></div>
+    <div data-reveal><TreasureMap /></div>
+    <div data-reveal><Cta /></div>
+  </main>
+  <Footer />
+</Layout>

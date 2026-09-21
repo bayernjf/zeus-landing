@@ -1,0 +1,94 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+
+const layers = [
+  { tag: "stack.layer5", title: "stack.layer5.title", desc: "stack.layer5.desc", accent: "var(--plasma)", n: "05" },
+  { tag: "stack.layer4", title: "stack.layer4.title", desc: "stack.layer4.desc", accent: "var(--data)", n: "04" },
+  { tag: "stack.layer3", title: "stack.layer3.title", desc: "stack.layer3.desc", accent: "var(--ok)", n: "03" },
+  { tag: "stack.layer2", title: "stack.layer2.title", desc: "stack.layer2.desc", accent: "var(--warn)", n: "02" },
+  { tag: "stack.layer1", title: "stack.layer1.title", desc: "stack.layer1.desc", accent: "var(--power)", n: "01" },
+];
+---
+
+<section id="stack">
+  <div class="shell">
+    <span class="stencil">{t("stack.bar")}</span>
+    <h2 class="h-sec">{t("stack.title")}</h2>
+    <p class="sub-sec">{t("stack.sub")}</p>
+
+    <div class="stack">
+      {layers.map((l) => (
+        <div class="layer" style={`--accent:${l.accent}`}>
+          <span class="layer__num">{l.n}</span>
+          <div class="layer__main">
+            <span class="layer__tag">{t(l.tag)}</span>
+            <h3 class="layer__title">{t(l.title)}</h3>
+          </div>
+          <p class="layer__desc">{t(l.desc)}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stack {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .layer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 56px 240px 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    background: linear-gradient(90deg, var(--steel-850), var(--steel-900));
+    border: var(--hair);
+    border-left: 3px solid var(--accent);
+    box-shadow: var(--bevel);
+  }
+  .layer__num {
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 0 0 12px var(--accent);
+  }
+  .layer__main {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .layer__tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--ink-faint);
+  }
+  .layer__title {
+    font-size: 16px;
+    letter-spacing: -0.01em;
+  }
+  .layer__desc {
+    font-size: 13.5px;
+    color: var(--ink-dim);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 860px) {
+    .layer {
+      grid-template-columns: 44px 1fr;
+      row-gap: 8px;
+    }
+    .layer__desc { grid-column: 2; }
+  }
+  @media (max-width: 560px) {
+    .layer { padding: 16px 14px; }
+    .layer__title { font-size: 15px; }
+  }
+</style>

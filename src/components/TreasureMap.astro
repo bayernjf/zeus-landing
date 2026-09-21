@@ -1,0 +1,139 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<section id="map">
+  <div class="shell">
+    <span class="stencil">{t("map.bar")}</span>
+    <h2 class="h-sec">{t("map.title")}</h2>
+    <p class="sub-sec">{t("map.sub")}</p>
+
+    <div class="map">
+      <div class="panel panel--riveted map__manifest">
+        <div class="panel__bar">
+          <span>~/.zeus/map.enc</span>
+          <span class="led" data-c="power" aria-hidden="true"></span>
+        </div>
+        <pre class="map__body" aria-hidden="true">{`{
+  "version": 1,
+  "cipher": "age-encryption.org/v1",
+  "sealed_by": "your-master-key",
+  "vaults": [
+    { "name": "personal",
+      "at": "~/zeus-realms/personal/vault",
+      "objects": 142,
+      "sha256": "9f2c…e41a" },
+    { "name": "diary",
+      "at": "~/zeus-realms/personal/diary",
+      "events": 1204,
+      "sha256": "77bd…0c3f" }
+  ],
+  "recovery": {
+    "diary_as_backup": true,
+    "inheritance": "conditional-later"
+  }
+}`}</pre>
+        <div class="map__foot">
+          <span class="readout">142 OBJECTS</span>
+          <span class="map__dot">·</span>
+          <span class="readout">1204 EVENTS</span>
+          <span class="map__dot">·</span>
+          <span class="map__sealed">SEALED · KEY NEVER LEAVES YOU</span>
+        </div>
+      </div>
+
+      <ul class="map__points">
+        <li class="map__point">
+          <span class="map__point-n">01</span>
+          <p>{t("map.p1")}</p>
+        </li>
+        <li class="map__point">
+          <span class="map__point-n">02</span>
+          <p>{t("map.p2")}</p>
+        </li>
+        <li class="map__point">
+          <span class="map__point-n">03</span>
+          <p>{t("map.p3")}</p>
+        </li>
+        <li class="map__point">
+          <span class="map__point-n">04</span>
+          <p>{t("map.p4")}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .map {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .map__manifest { overflow: hidden; }
+  .map__body {
+    margin: 0;
+    padding: 20px 22px;
+    background: var(--steel-900);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--data);
+    overflow: auto;
+    white-space: pre;
+  }
+  .map__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    border-top: var(--hair);
+    background: var(--steel-850);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--ink-dim);
+  }
+  .map__sealed { color: var(--power); }
+  .map__dot { color: var(--steel-500); }
+
+  .map__points {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .map__point {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 16px 18px;
+    background: var(--steel-850);
+    border: var(--hair);
+    box-shadow: var(--bevel);
+  }
+  .map__point-n {
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--power);
+    text-shadow: 0 0 10px rgba(255, 176, 32, 0.5);
+  }
+  .map__point p {
+    font-size: 14px;
+    color: var(--ink-dim);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .map { grid-template-columns: 1fr; }
+  }
+</style>

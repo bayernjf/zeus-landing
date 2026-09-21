@@ -1,0 +1,196 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<section class="hero">
+  <div class="shell">
+    <div class="hero__head">
+      <div class="hero__badge">
+        <span class="led" data-c="power" aria-hidden="true"></span>
+        <span>{t("hero.badge")}</span>
+      </div>
+      <h1 class="hero__title">
+        {t("hero.title.line1")}<br />
+        {t("hero.title.pre")}<span class="hero__accent">{t("hero.title.accent")}</span>{t("hero.title.post")}
+      </h1>
+      <p class="hero__sub">{t("hero.sub")}</p>
+      <div class="hero__actions">
+        <a href="#cta" class="btn">
+          {t("hero.cta.primary")}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </a>
+        <a href="#stack" class="btn btn--ghost">{t("hero.cta.secondary")}</a>
+      </div>
+      <div class="hero__meta">
+        <span><b class="readout">3</b> {t("hero.meta.protocols")}</span>
+        <span class="hero__dot" aria-hidden="true">·</span>
+        <span><b class="readout">5</b> {t("hero.meta.layers")}</span>
+        <span class="hero__dot" aria-hidden="true">·</span>
+        <span><b class="readout">2</b> {t("hero.meta.modes")}</span>
+        <span class="hero__dot" aria-hidden="true">·</span>
+        <span>{t("hero.meta.flowPre")}<b class="readout">Realm</b>{t("hero.meta.flowPost")}</span>
+      </div>
+    </div>
+
+    <div class="hero__map panel panel--riveted">
+      <div class="panel__bar">
+        <span>{t("hero.map.bar")}</span>
+        <span class="hero__map-status">
+          <span class="led" data-c="data" aria-hidden="true"></span>
+          <span class="readout">2 REALMS · 1 VASSAL</span>
+        </span>
+      </div>
+      <div class="hero__map-body">
+        <pre class="realm-tree" aria-hidden="true">
+<span class="rt-root">~/zeus-realms/</span>
+├── <span class="rt-dir">personal/</span>          <span class="rt-tag">PERSONAL</span>   <span class="rt-ok">● sovereign</span>
+│   ├── vault/              <span class="rt-dim">encrypted · 142 objects</span>
+│   ├── diary/              <span class="rt-dim">narrative backup</span>
+│   └── map.enc             <span class="rt-dim">manifest + recovery route</span>
+├── <span class="rt-dir">enterprise/</span>       <span class="rt-tag rt-tag--alt">ENTERPRISE</span> <span class="rt-ok">● multi-tenant</span>
+│   ├── mentor/             <span class="rt-dim">onboarding agent</span>
+│   └── dept-engineering/   <span class="rt-dim">audited · data diode</span>
+└── <span class="rt-dir">vassals/</span>           <span class="rt-tag rt-tag--vassal">FEDERATION</span>
+    └── pr-helper/          <span class="rt-dim">agent-card · accepting tasks</span>
+</pre>
+      </div>
+      <div class="hero__map-foot">
+        <span class="hero__legend"><i style="--c:var(--power)"></i>personal realm</span>
+        <span class="hero__legend"><i style="--c:var(--data)"></i>enterprise realm</span>
+        <span class="hero__legend"><i style="--c:var(--ok)"></i>vassal online</span>
+        <span class="hero__pan">directory = database</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 72px 0 88px;
+  }
+  .hero__head { max-width: 820px; }
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--power);
+    background: rgba(255, 176, 32, 0.07);
+    border: 1px solid rgba(255, 176, 32, 0.28);
+  }
+  .hero__title {
+    margin-top: 22px;
+    font-size: clamp(34px, 6vw, 60px);
+    letter-spacing: -0.02em;
+  }
+  .hero__accent {
+    background: linear-gradient(100deg, var(--power), var(--data));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero__sub {
+    margin-top: 20px;
+    max-width: 60ch;
+    font-size: 16px;
+    color: var(--ink-dim);
+  }
+  .hero__actions {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .hero__meta {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+  }
+  .hero__meta b { color: var(--ink); }
+  .hero__dot { color: var(--steel-500); }
+
+  .hero__map { margin-top: 56px; }
+  .hero__map-status { display: flex; align-items: center; gap: 7px; }
+  .hero__map-body {
+    padding: 26px 20px;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 30%, rgba(255, 176, 32, 0.05), transparent 70%),
+      radial-gradient(ellipse 70% 60% at 85% 70%, rgba(53, 224, 240, 0.04), transparent 70%),
+      var(--steel-900);
+    overflow: auto;
+  }
+  .realm-tree {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.85;
+    color: var(--ink-dim);
+    white-space: pre;
+  }
+  .rt-root { color: var(--ink); font-weight: 700; }
+  .rt-dir { color: var(--power); }
+  .rt-tag {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 0 6px;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    color: var(--power);
+    border: 1px solid rgba(255, 176, 32, 0.4);
+    background: rgba(255, 176, 32, 0.08);
+  }
+  .rt-tag--alt { color: var(--data); border-color: var(--data-dim); background: rgba(53, 224, 240, 0.06); }
+  .rt-tag--vassal { color: var(--ok); border-color: rgba(102, 224, 122, 0.4); background: rgba(102, 224, 122, 0.06); }
+  .rt-dim { color: var(--ink-faint); }
+  .rt-ok { color: var(--ok); }
+
+  .hero__map-foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 11px 16px;
+    border-top: var(--hair);
+    background: var(--steel-850);
+  }
+  .hero__legend {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+  .hero__legend i {
+    width: 16px; height: 2px;
+    background: var(--c);
+    box-shadow: 0 0 6px var(--c);
+  }
+  .hero__pan {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--power);
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 44px 0 60px; }
+    .hero__map { margin-top: 36px; }
+    .hero__map-body { padding: 14px 10px; }
+    .realm-tree { font-size: 11px; }
+    .hero__map-foot { gap: 10px; }
+    .hero__pan { margin-left: 0; }
+  }
+</style>

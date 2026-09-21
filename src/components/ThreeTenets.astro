@@ -1,0 +1,89 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<section id="tenets">
+  <div class="shell">
+    <span class="stencil">{t("tenets.bar")}</span>
+    <h2 class="h-sec">{t("tenets.title")}</h2>
+    <p class="sub-sec">{t("tenets.sub")}</p>
+
+    <div class="tenets">
+      <article class="panel tenet">
+        <div class="panel__bar">
+          <span>{t("tenets.1.tag")}</span>
+          <span class="led" data-c="data" aria-hidden="true"></span>
+        </div>
+        <div class="tenet__body">
+          <svg class="tenet__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--data)" stroke-width="1.6">
+            <path d="M9 7 4 12l5 5M15 7l5 5-5 5"/>
+          </svg>
+          <h3 class="tenet__title">{t("tenets.1.title")}</h3>
+          <p class="tenet__desc">{t("tenets.1.desc")}</p>
+        </div>
+      </article>
+
+      <article class="panel tenet">
+        <div class="panel__bar">
+          <span>{t("tenets.2.tag")}</span>
+          <span class="led" data-c="power" aria-hidden="true"></span>
+        </div>
+        <div class="tenet__body">
+          <svg class="tenet__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--power)" stroke-width="1.6">
+            <path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="3.2"/>
+          </svg>
+          <h3 class="tenet__title">{t("tenets.2.title")}</h3>
+          <p class="tenet__desc">{t("tenets.2.desc")}</p>
+        </div>
+      </article>
+
+      <article class="panel tenet">
+        <div class="panel__bar">
+          <span>{t("tenets.3.tag")}</span>
+          <span class="led" data-c="ok" aria-hidden="true"></span>
+        </div>
+        <div class="tenet__body">
+          <svg class="tenet__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="1.6">
+            <circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/>
+            <path d="M6 8.5v3c0 1.5 1 2.5 2.5 2.5h1M18 8.5v3c0 1.5-1 2.5-2.5 2.5h-1M12 15.6v-2"/>
+          </svg>
+          <h3 class="tenet__title">{t("tenets.3.title")}</h3>
+          <p class="tenet__desc">{t("tenets.3.desc")}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tenets {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .tenet { overflow: hidden; }
+  .tenet__body {
+    padding: 26px 24px 30px;
+    background: linear-gradient(180deg, var(--steel-850), var(--steel-900));
+  }
+  .tenet__icon {
+    margin-bottom: 16px;
+  }
+  .tenet__title {
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+  .tenet__desc {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--ink-dim);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 960px) {
+    .tenets { grid-template-columns: 1fr; }
+  }
+</style>
