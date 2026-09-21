@@ -1,5 +1,9 @@
 // Bilingual copy dictionary. Flat dot-keyed so a missing key is obvious at the
 // call site; read through useTranslations(lang), never indexed directly.
+// Privacy / terms copy lives in ./legal and is spread in below, so the legal
+// pages still read through the same t() pipeline.
+import { LEGAL_EN, LEGAL_ZH } from "./legal";
+
 export const languages = {
   en: "English",
   zh: "简体中文",
@@ -135,6 +139,8 @@ export const ui = {
     "foot.nav.cta": "Access",
     "foot.nav.privacy": "Privacy",
     "foot.nav.terms": "Terms",
+
+    ...LEGAL_EN,
   },
 
   zh: {
@@ -264,5 +270,10 @@ export const ui = {
     "foot.nav.cta": "准入",
     "foot.nav.privacy": "隐私",
     "foot.nav.terms": "条款",
+
+    ...LEGAL_ZH,
   },
 } as const;
+
+export type Lang = keyof typeof ui;
+export type UIKey = keyof (typeof ui)["en"];
