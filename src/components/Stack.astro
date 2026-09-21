@@ -3,13 +3,14 @@ import { getLangFromUrl, useTranslations } from "../i18n";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
 
+// `as const` keeps the keys as literal types so they can be handed to t() as UIKey.
 const layers = [
-  { tag: "stack.layer5", title: "stack.layer5.title", desc: "stack.layer5.desc", accent: "var(--plasma)", n: "05" },
-  { tag: "stack.layer4", title: "stack.layer4.title", desc: "stack.layer4.desc", accent: "var(--data)", n: "04" },
-  { tag: "stack.layer3", title: "stack.layer3.title", desc: "stack.layer3.desc", accent: "var(--ok)", n: "03" },
-  { tag: "stack.layer2", title: "stack.layer2.title", desc: "stack.layer2.desc", accent: "var(--warn)", n: "02" },
-  { tag: "stack.layer1", title: "stack.layer1.title", desc: "stack.layer1.desc", accent: "var(--power)", n: "01" },
-];
+  { tag: "stack.layer5.tag", title: "stack.layer5.title", desc: "stack.layer5.desc", accent: "var(--plasma)", n: "05" },
+  { tag: "stack.layer4.tag", title: "stack.layer4.title", desc: "stack.layer4.desc", accent: "var(--data)", n: "04" },
+  { tag: "stack.layer3.tag", title: "stack.layer3.title", desc: "stack.layer3.desc", accent: "var(--ok)", n: "03" },
+  { tag: "stack.layer2.tag", title: "stack.layer2.title", desc: "stack.layer2.desc", accent: "var(--warn)", n: "02" },
+  { tag: "stack.layer1.tag", title: "stack.layer1.title", desc: "stack.layer1.desc", accent: "var(--power)", n: "01" },
+] as const;
 ---
 
 <section id="stack">
