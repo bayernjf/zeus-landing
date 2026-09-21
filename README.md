@@ -62,6 +62,15 @@ Pages 项目 `zeus-landing` 已连接 GitHub 仓库 `bayernjf/zeus-landing`：�
 域名：`zeus-landing.pages.dev` + 自定义域名 `zeus.bayjf.com`。完整配置、首次部署过程与验证清单见
 [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md)。
 
+## SEO / GEO
+
+- 每种语言独立的 title / description（`src/i18n/ui.ts` 的 `meta.*`），canonical + 三条 hreflang
+- `@astrojs/sitemap` 生成带 hreflang 互指的 sitemap
+- 构建时截图产出 og:image（`scripts/shot.mjs`），同时作为 bayjf 主站卡片封面
+- `public/robots.txt` 显式放行 GPTBot、ClaudeBot、PerplexityBot、CCBot 等 AI 爬虫
+- `public/llms.txt`（中文）与 `public/llms-en.txt`（英文）自述产品定义、三纲、两种数据域、
+  五层架构与封臣协议，供答案引擎直接引用
+
 ## 项目约定
 
 见 [AGENTS.md](./AGENTS.md)。Commit 规范见 [git-commit-message.md](./git-commit-message.md)。
