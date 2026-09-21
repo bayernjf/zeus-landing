@@ -59,19 +59,19 @@ https://github.com/settings/installations 把 `zeus-landing` 加入 Cloudflare P
 或在 Dashboard 里手动 Retry deployment。
 
 ## 自定义域名（zeus.bayjf.com）
-已在 Pages 项目里绑定（状态 `initializing` / `pending`），但 Cloudflare **没有**自动补 DNS 记录：
-试过 API 绑定与「解绑 → 重新绑定」，都停在 pending；用 wrangler 的 OAuth 凭据直接建记录返回 403。
-原因大概率是绑定所用 API Token 只有 Pages 权限、没有 `DNS:Edit`，自动建记录的步骤被拒。
+已生效：`zeus.bayjf.com` 解析到 Cloudflare 代理 IP，HTTPS 200，证书由 Pages 自动签发；
+`/`、`/zh/`、`/privacy/`、`/terms/`、`preview-*.png`、`llms*.txt`、`sitemap-index.xml` 均已复验。
 
-还差一条手动记录（Dashboard → bayjf.com → DNS）：
+绑定过程留个记录：Pages 侧绑定后 Cloudflare **没有**自动补 DNS 记录（API 绑定与「解绑 → 重新绑定」
+都停在 `pending`；用 wrangler 的 OAuth 凭据直接建记录返回 403——绑定所用 API Token 只有 Pages
+权限、没有 `DNS:Edit`），最后是手动加的一条记录：
 
 | 类型 | 名称 | 内容 | 代理状态 |
 |---|---|---|---|
 | CNAME | `zeus` | `zeus-landing.pages.dev` | Proxied |
 
-记录生效后证书会自动签发（HTTP 验证），随后复查 `https://zeus.bayjf.com/` 与 `/zh/`。
-另一条路：给 `CLOUDFLARE_API_TOKEN` 补上 `DNS:Edit`，改走
-`POST /zones/{zone_id}/dns_records`，此后同类绑定就能一次跑完。
+以后同类绑定有两条路：在 Dashboard 手加这条记录，或给 `CLOUDFLARE_API_TOKEN` 补 `DNS:Edit`
+后走 `POST /zones/{zone_id}/dns_records` 一次跑完。
 
 ## 发布后验证
 1. `/` 与 `/zh/` 双语首页可访问，`<title>` 与语言切换正常（根目录英文、`/zh/` 中文）。
