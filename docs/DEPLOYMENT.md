@@ -5,8 +5,8 @@
 ## 站点信息
 - 线上：`https://zeus.bayjf.com`（English）· `https://zeus.bayjf.com/zh/`（简体中文）
 - Pages 项目：`zeus-landing`（已连接 GitHub 仓库 `bayernjf/zeus-landing`）
-- Pages 域名：`zeus-landing.pages.dev`；自定义域名 `zeus.bayjf.com`（与 zone 同账号，
-  绑定项目后自动创建 `CNAME zeus → zeus-landing.pages.dev`，Proxied）
+- Pages 域名：`zeus-landing.pages.dev`（已生效）；自定义域名 `zeus.bayjf.com`（已在 Pages 绑定，
+  DNS 记录待补，见「自定义域名」一节）
 - 技术栈：Astro 7（SSG）+ React 19 island + `@bay/landing-ui` + `@astrojs/sitemap`
 - Node：`>=22.12.0`；包管理器 npm
 
@@ -49,6 +49,21 @@ curl -X POST \
 部署记录的 `deployment_trigger.type` 仍为 `ad_hoc`，到
 https://github.com/settings/installations 把 `zeus-landing` 加入 Cloudflare Pages 的仓库授权，
 或在 Dashboard 里手动 Retry deployment。
+
+## 自定义域名（zeus.bayjf.com）
+已在 Pages 项目里绑定（状态 `initializing` / `pending`），但 Cloudflare **没有**自动补 DNS 记录：
+试过 API 绑定与「解绑 → 重新绑定」，都停在 pending；用 wrangler 的 OAuth 凭据直接建记录返回 403。
+原因大概率是绑定所用 API Token 只有 Pages 权限、没有 `DNS:Edit`，自动建记录的步骤被拒。
+
+还差一条手动记录（Dashboard → bayjf.com → DNS）：
+
+| 类型 | 名称 | 内容 | 代理状态 |
+|---|---|---|---|
+| CNAME | `zeus` | `zeus-landing.pages.dev` | Proxied |
+
+记录生效后证书会自动签发（HTTP 验证），随后复查 `https://zeus.bayjf.com/` 与 `/zh/`。
+另一条路：给 `CLOUDFLARE_API_TOKEN` 补上 `DNS:Edit`，改走
+`POST /zones/{zone_id}/dns_records`，此后同类绑定就能一次跑完。
 
 ## 发布后验证
 1. `/` 与 `/zh/` 双语首页可访问，`<title>` 与语言切换正常。
