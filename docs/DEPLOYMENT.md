@@ -94,8 +94,8 @@ https://github.com/settings/installations 把 `zeus-landing` 加入 Cloudflare P
   `doc` 结构（`global.css` 里两边样式本就同源，无需新增），页脚补上两条入口。
   文案集中在 `src/i18n/legal.ts`（中英成对），经 `ui.ts` spread 进字典，页面只通过 `t()` 取词。
 - **GEO 资产**：新增 `public/llms.txt`（中文）与 `public/llms-en.txt`（英文），事实来源为
-  `zeus/docs/product-portrait.md` 与内核现状，涵盖定位、三纲、词汇表、两种数据域、五层架构、
-  协议要求、封臣式产品矩阵与差异点。
+  `zeus/docs/product-portrait.md` 与内核现状，涵盖定位、能力接入三原语、词汇表、两种数据域、五层架构、
+  协议要求、执行 Agent 产品矩阵与差异点。
 - **类型与文案修复**：`src/i18n/ui.ts` 补回 `Lang` / `UIKey` 导出（此前 `npm run check` 报 7 个错误）；
   `Stack.astro` 的图层 tag key 补上 `.tag` 后缀——此前线上页面直接渲染出 `stack.layer1` 字面量。
   现在 `npm run check` 为 25 文件 0 error / 0 warning / 0 hint，与 agent-world-landing 相同。

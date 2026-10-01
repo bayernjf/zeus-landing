@@ -74,11 +74,11 @@ export const LEGAL_EN = {
 
   "legal.terms.s4.title": "4. Illustrative Data and the Demo Realm",
   "legal.terms.s4.body":
-    "The clock, the realm and vassal counters, the SOVEREIGN REALM panel and the treasure-map walkthrough are illustrative samples used to demonstrate the interface. They are not benchmarks and are not connected to a live deployment.",
+    "The clock, the realm and agent counters, the SOVEREIGN REALM panel and the recovery-protocol walkthrough are illustrative samples used to demonstrate the interface. They are not benchmarks and are not connected to a live deployment.",
 
   "legal.terms.s5.title": "5. Your Data Stays Yours",
   "legal.terms.s5.body":
-    "The Site does not host, receive or process your data directory. Data sovereignty — one folder as the seat of power, replaceable if you walk away — is a property of the product you install, not of this page. Backup, encryption and recovery behaviour is governed by the product itself as it ships.",
+    "The Site does not host, receive or process your data directory. Data sovereignty — one folder as the data foundation, replaceable if you walk away — is a property of the product you install, not of this page. Backup, encryption and recovery behaviour is governed by the product itself as it ships.",
 
   "legal.terms.s6.title": "6. Intellectual Property",
   "legal.terms.s6.body":
@@ -104,7 +104,7 @@ export const LEGAL_EN = {
 } as const;
 
 export const LEGAL_ZH: Record<keyof typeof LEGAL_EN, string> = {
-  "legal.back": "返回王座",
+  "legal.back": "返回数据域",
 
   "legal.privacy.metaTitle": "隐私政策 | Zeus",
   "legal.privacy.metaDesc": "Zeus 落地页如何处理与你的访问相关的信息。",
@@ -129,7 +129,7 @@ export const LEGAL_ZH: Record<keyof typeof LEGAL_EN, string> = {
 
   "legal.privacy.s3.title": "3. 实时读数与演示领域",
   "legal.privacy.s3.body":
-    "本站的时钟、领域计数与「主权领域」面板都是在你的浏览器里渲染的演示数据，没有连接任何后端；你对它们的任何操作都不会被传输或存储。",
+    "本站的时钟、数据域计数与「主权数据域」面板都是在你的浏览器里渲染的演示数据，没有连接任何后端；你对它们的任何操作都不会被传输或存储。",
 
   "legal.privacy.s4.title": "4. Cookie 与本地存储",
   "legal.privacy.s4.body":
@@ -173,11 +173,11 @@ export const LEGAL_ZH: Record<keyof typeof LEGAL_EN, string> = {
 
   "legal.terms.s4.title": "4. 示意数据与演示领域",
   "legal.terms.s4.body":
-    "本站的时钟、领域与封臣计数、「主权领域」面板以及藏宝图演示，都是用于展示界面的示例数据。它们不是性能基准，也没有连接任何真实部署。",
+    "本站的时钟、数据域与执行 Agent 计数、「主权数据域」面板以及恢复协议演示，都是用于展示界面的示例数据。它们不是性能基准，也没有连接任何真实部署。",
 
   "legal.terms.s5.title": "5. 你的数据始终属于你",
   "legal.terms.s5.body":
-    "本站不托管、不接收、也不处理你的数据目录。数据主权——一个目录即王座、离开时可替换——是你安装的产品所具有的属性，而不是这个页面的。备份、加密与恢复行为以产品实际交付为准。",
+    "本站不托管、不接收、也不处理你的数据目录。数据主权——一个目录即数据底座、离开时可替换——是你安装的产品所具有的属性，而不是这个页面的。备份、加密与恢复行为以产品实际交付为准。",
 
   "legal.terms.s6.title": "6. 知识产权",
   "legal.terms.s6.body":

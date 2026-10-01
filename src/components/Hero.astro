@@ -39,27 +39,27 @@ const t = useTranslations(getLangFromUrl(Astro.url));
         <span>{t("hero.map.bar")}</span>
         <span class="hero__map-status">
           <span class="led" data-c="data" aria-hidden="true"></span>
-          <span class="readout">2 REALMS · 1 VASSAL</span>
+          <span class="readout">2 REALMS · 1 AGENT</span>
         </span>
       </div>
       <div class="hero__map-body">
         <pre class="realm-tree" aria-hidden="true">
 <span class="rt-root">~/zeus-realms/</span>
-├── <span class="rt-dir">personal/</span>          <span class="rt-tag">PERSONAL</span>   <span class="rt-ok">● sovereign</span>
+├── <span class="rt-dir">personal/</span>          <span class="rt-tag">PERSONAL</span>   <span class="rt-ok">● single-owner</span>
 │   ├── vault/              <span class="rt-dim">encrypted · 142 objects</span>
 │   ├── diary/              <span class="rt-dim">narrative backup</span>
 │   └── map.enc             <span class="rt-dim">manifest + recovery route</span>
 ├── <span class="rt-dir">enterprise/</span>       <span class="rt-tag rt-tag--alt">ENTERPRISE</span> <span class="rt-ok">● multi-tenant</span>
 │   ├── mentor/             <span class="rt-dim">onboarding agent</span>
 │   └── dept-engineering/   <span class="rt-dim">audited · data diode</span>
-└── <span class="rt-dir">vassals/</span>           <span class="rt-tag rt-tag--vassal">FEDERATION</span>
+└── <span class="rt-dir">agents/</span>            <span class="rt-tag rt-tag--vassal">AGENTS</span>
     └── pr-helper/          <span class="rt-dim">agent-card · accepting tasks</span>
 </pre>
       </div>
       <div class="hero__map-foot">
         <span class="hero__legend"><i style="--c:var(--power)"></i>personal realm</span>
         <span class="hero__legend"><i style="--c:var(--data)"></i>enterprise realm</span>
-        <span class="hero__legend"><i style="--c:var(--ok)"></i>vassal online</span>
+        <span class="hero__legend"><i style="--c:var(--ok)"></i>agent online</span>
         <span class="hero__pan">directory = database</span>
       </div>
     </div>
