@@ -13,23 +13,23 @@ export const defaultLang = "en";
 
 export const ui = {
   en: {
-    "meta.title": "Zeus — the agent OS where your directory is the throne",
+    "meta.title": "Zeus — the agent OS built on your data directory",
     "meta.description":
-      "Zeus is an operating system built on your own data directory. Agents are your vassals, MCP connects the world, Skills compound, and A2A holds them together. For individuals: a harbor for memory and a map you can pass on. For teams: a plug-in virtual department that onboards on day one.",
+      "Zeus is an operating system built on your own data directory. Agents work under your direction; MCP connects the world, Skills compound, and A2A holds them together. For individuals: a secure carrier for memory and a recovery protocol you can pass on. For teams: a plug-in virtual department that onboards on day one.",
 
     "nav.langSwitch": "中文",
     "hud.home": "Zeus home",
     "hud.res.realms": "REALMS",
-    "hud.res.vassals": "VASSALS",
+    "hud.res.vassals": "AGENTS",
     "hud.res.protocols": "PROTOCOLS",
 
     "hero.badge": "v0.1 · early access",
-    "hero.title.line1": "Your directory is the throne.",
-    "hero.title.pre": "Agents are your ",
-    "hero.title.accent": "vassals.",
+    "hero.title.line1": "Your directory is the foundation.",
+    "hero.title.pre": "Agents are ",
+    "hero.title.accent": "yours to direct.",
     "hero.title.post": "",
     "hero.sub":
-      "Zeus is an operating system that takes one folder as its data seat of power. It connects MCP tools, grows Skills, and lets agents delegate to one another over A2A — while you remain the driver who steers, reviews and decides. Your data leaves only on your order.",
+      "Zeus is an operating system that takes one folder as its data foundation. It connects MCP tools, grows Skills, and lets agents delegate to one another over A2A — while you remain the operator who directs, reviews and decides. Your data leaves only on your confirmation.",
     "hero.cta.primary": "Request access",
     "hero.cta.secondary": "See the architecture",
     "hero.meta.protocols": "protocols",
@@ -39,10 +39,10 @@ export const ui = {
     "hero.meta.flowPost": "realm",
     "hero.map.bar": "SOVEREIGN REALM · LIVE",
 
-    "tenets.bar": "THE THREE TENETS",
-    "tenets.title": "Every capability enters through one of three doors.",
+    "tenets.bar": "THREE ACCESS PRIMITIVES",
+    "tenets.title": "Every capability enters through one of three channels.",
     "tenets.sub":
-      "No feature is a one-off. Anything Zeus integrates must collapse to MCP, Skill, or A2A — the only postures the constitution permits.",
+      "No feature is a one-off. Anything Zeus integrates must collapse to MCP, Skill, or A2A — the only channels the architecture permits.",
     "tenets.1.tag": "I · CONNECT",
     "tenets.1.title": "MCP — plug into the world",
     "tenets.1.desc":
@@ -54,44 +54,44 @@ export const ui = {
     "tenets.3.tag": "III · ORGANIZE",
     "tenets.3.title": "A2A — agents govern agents",
     "tenets.3.desc":
-      "Every vassal product exposes an Agent Card. Zeus dispatches tasks, streams reports back, and escalates to you the moment a human call is needed.",
+      "Every execution-agent product exposes an Agent Card. Zeus dispatches tasks, streams task artifacts back, and escalates to you the moment a human decision is needed.",
 
     "stack.bar": "THE STACK",
     "stack.title": "Five layers, one seam.",
     "stack.sub":
-      "Narrative on top, data on the bottom. Every layer above is backed by a real, executable primitive below — poetry and engineering are the same map.",
+      "Narrative on top, data on the bottom. Every layer above is backed by a real, executable primitive below — narrative and engineering are the same design.",
     "stack.layer5.tag": "NARRATIVE",
-    "stack.layer5.title": "Chronicle · Mentor · Harbor · Inheritance",
+    "stack.layer5.title": "Recovery protocol · Diary · Mentor · Secure carrier · Inheritance",
     "stack.layer5.desc":
       "Emotional value and belonging, not slogans — every story points to a recovery action.",
     "stack.layer4.tag": "COLLABORATE",
     "stack.layer4.title": "Team · A2A delegation · Oversight deck",
     "stack.layer4.desc":
-      "A small society of agents, with you as the driver. Approve, reject, redirect.",
+      "A multi-agent system, with you as the operator. Approve, reject, redirect.",
     "stack.layer3.tag": "GROW",
     "stack.layer3.title": "Skill packs · Mentor onboarding · Agent registry",
     "stack.layer3.desc":
       "Recruit, train, harden. Capability becomes an asset, not a one-off prompt.",
     "stack.layer2.tag": "CONNECT",
-    "stack.layer2.title": "MCP connectors · External agents · Vassal products",
+    "stack.layer2.title": "MCP connectors · External agents · Execution-agent products",
     "stack.layer2.desc":
-      "pr-helper, loom, atlas — each keeps its own repo and deploy, reports back as war dispatches.",
+      "pr-helper, loom, atlas — each keeps its own repo and deploy, reports back with task artifacts.",
     "stack.layer1.tag": "DATA",
     "stack.layer1.title": "Realm directory · Vault · Map manifest · Backups",
     "stack.layer1.desc":
       "You point at a folder. That folder is the database. Backups are a first-class citizen.",
 
     "dual.bar": "ONE ENGINE, TWO REGIMES",
-    "dual.title": "Same primitives. Different sovereignty.",
+    "dual.title": "Same primitives. Different governance.",
     "dual.sub":
       "Personal and enterprise realms share every layer. The only thing that changes is who holds the keys and who may audit.",
     "dual.personal.tag": "PERSONAL REALM",
-    "dual.personal.title": "A harbor for memory",
+    "dual.personal.title": "A secure carrier for memory",
     "dual.personal.desc":
-      "One sovereign. Your memories, your diary, your treasure map — encrypted, backed up, and inheritable under conditions you set.",
+      "Single owner. Your memories, your diary, your recovery protocol — encrypted, backed up, and inheritable under conditions you set.",
     "dual.personal.p1": "Single-owner directory",
     "dual.personal.p2": "Diary as narrative backup",
-    "dual.personal.p3": "A map you can pass on",
+    "dual.personal.p3": "A recovery protocol you can pass on",
     "dual.enterprise.tag": "ENTERPRISE REALM",
     "dual.enterprise.title": "A virtual department",
     "dual.enterprise.desc":
@@ -100,10 +100,10 @@ export const ui = {
     "dual.enterprise.p2": "Knowledge survives turnover",
     "dual.enterprise.p3": "Audit-ready, data stays in the domain",
 
-    "map.bar": "THE TREASURE MAP",
-    "map.title": "The map is the recovery protocol.",
+    "map.bar": "RECOVERY PROTOCOL",
+    "map.title": "The recovery protocol is the backup-and-restore contract.",
     "map.sub":
-      "Zeus never stores your treasure in the cloud. It stores an encrypted manifest plus the route to your vault — so you hold the map, and Zeus only holds a backup of the map.",
+      "Zeus never stores your data in the cloud. It stores an encrypted manifest plus the route to your backup carrier — so you hold the manifest, and Zeus only holds a backup of it.",
     "map.p1":
       "Manifest, not data: an encrypted list of what you own, where it lives, and how to restore it.",
     "map.p2": "Diary as backup: memory written in story, replayable as events.",
@@ -117,7 +117,7 @@ export const ui = {
     "cta.title": "Bring your directory.",
     "cta.sub":
       "No migration, no lock-in. Point Zeus at a folder and the OS stands it up. Take the folder away and Zeus is replaceable — that is the point.",
-    "cta.list1": "First vassal: pr-helper, now in acceptance",
+    "cta.list1": "First execution agent: pr-helper, now in acceptance",
     "cta.list2": "Realm read / write / retrieve interface spec",
     "cta.list3": "A2A agent-card + task dispatch draft",
     "cta.list4": "Bilingual (en / zh) on day one",
@@ -131,11 +131,11 @@ export const ui = {
     "cta.note":
       "We read every request. No marketing lists — just the occasional changelog.",
 
-    "foot.tag": "Your directory is the throne. Agents are the vassals.",
-    "foot.nav.tenets": "Three tenets",
+    "foot.tag": "Your directory is the foundation. Agents work under your direction.",
+    "foot.nav.tenets": "Access primitives",
     "foot.nav.stack": "The stack",
     "foot.nav.dual": "Two regimes",
-    "foot.nav.map": "Treasure map",
+    "foot.nav.map": "Recovery protocol",
     "foot.nav.cta": "Access",
     "foot.nav.privacy": "Privacy",
     "foot.nav.terms": "Terms",
@@ -144,23 +144,23 @@ export const ui = {
   },
 
   zh: {
-    "meta.title": "Zeus —— 以你的目录为王座的多 Agent 操作系统",
+    "meta.title": "Zeus —— 以你的数据目录为底座的多 Agent 操作系统",
     "meta.description":
-      "Zeus 是一个以用户数据目录为底座的操作系统：MCP 连接世界，Skill 持续成长，A2A 让 Agent 互相协作，而你始终是掌舵的驾驶员。对个人，是记忆的避风港与可传承的藏宝图；对企业，是即插即用、伴随成长的虚拟部门。",
+      "Zeus 是一个以用户数据目录为底座的操作系统：MCP 连接世界，Skill 持续成长，A2A 让 Agent 互相协作，而你始终是操作者。对个人，是记忆的安全载体与可传承的备份与恢复协议；对企业，是即插即用、伴随成长的虚拟部门。",
 
     "nav.langSwitch": "EN",
     "hud.home": "Zeus 首页",
     "hud.res.realms": "数据域",
-    "hud.res.vassals": "封臣",
+    "hud.res.vassals": "执行 Agent",
     "hud.res.protocols": "协议",
 
     "hero.badge": "v0.1 · 早期准入",
-    "hero.title.line1": "你的目录，即是王座。",
-    "hero.title.pre": "Agent 皆是你的",
-    "hero.title.accent": "封臣。",
+    "hero.title.line1": "你的目录，即是数据底座。",
+    "hero.title.pre": "Agent 皆由",
+    "hero.title.accent": "你调度。",
     "hero.title.post": "",
     "hero.sub":
-      "Zeus 以一个目录为数据底座，接入 MCP 工具、沉淀 Skill 技能、通过 A2A 让 Agent 之间互相委派与回流。你始终保留中断、改道与拍板的最高权——数据只在你点头时离开。",
+      "Zeus 以一个目录为数据底座，接入 MCP 工具、沉淀 Skill 技能、通过 A2A 让 Agent 之间互相委派与回传。你始终保留中断、改道与决策的最高权——数据只在你确认时离开。",
     "hero.cta.primary": "申请准入",
     "hero.cta.secondary": "查看架构",
     "hero.meta.protocols": "协议",
@@ -170,10 +170,10 @@ export const ui = {
     "hero.meta.flowPost": "Realm",
     "hero.map.bar": "主权数据域 · 在线",
 
-    "tenets.bar": "立国三纲",
-    "tenets.title": "一切能力，只从三道门进入。",
+    "tenets.bar": "能力接入三原语",
+    "tenets.title": "一切能力，只从三条通道接入。",
     "tenets.sub":
-      "Zeus 没有一次性功能。任何接入都必须落到 MCP、Skill 或 A2A——这是宪法规定的唯一姿势。",
+      "Zeus 没有一次性功能。任何接入都必须落到 MCP、Skill 或 A2A——这是架构规定的唯一接入通道。",
     "tenets.1.tag": "I · 连接",
     "tenets.1.title": "MCP —— 连接世界",
     "tenets.1.desc":
@@ -185,44 +185,44 @@ export const ui = {
     "tenets.3.tag": "III · 组织",
     "tenets.3.title": "A2A —— Agent 治理 Agent",
     "tenets.3.desc":
-      "每个封臣产品暴露一张 Agent Card。Zeus 派发任务、以 SSE 回流战报，需要人拍板时立刻升级。",
+      "每个执行 Agent 产品暴露一张 Agent Card。Zeus 派发任务、以 SSE 回传任务产物，需要人工决策时立即升级。",
 
     "stack.bar": "五层架构",
     "stack.title": "五层，一条缝。",
     "stack.sub":
-      "叙事在顶，数据在底。上层的每一句诗，都对应下层一段真实可执行的原语——诗与工程是同一张图。",
+      "叙事在顶，数据在底。上层的每一段叙事，都对应下层一段真实可执行的原语——叙事与工程是同一份设计。",
     "stack.layer5.tag": "叙事层",
-    "stack.layer5.title": "藏宝图 · 日记 · 导师 · 港湾 · 传承",
+    "stack.layer5.title": "恢复协议 · 日记 · 导师 · 安全载体 · 传承",
     "stack.layer5.desc":
       "情绪价值与归属感，不靠口号——每一段叙事都指向一个恢复动作。",
     "stack.layer4.tag": "协作层",
     "stack.layer4.title": "编制(Team) · 委托(A2A) · 监督台",
     "stack.layer4.desc":
-      "一个小小的 Agent 社会，你是驾驶员。批准、驳回、改道。",
+      "一个多 Agent 协作系统，你是操作者。批准、驳回、改道。",
     "stack.layer3.tag": "能力层",
     "stack.layer3.title": "Skill 技能包 · Mentor 带教 · Agent 注册",
     "stack.layer3.desc":
-      "招兵买马、导师带教、技能加固。能力变成资产，而不是一次性提示词。",
+      "招募、导师带教、技能加固。能力变成资产，而不是一次性提示词。",
     "stack.layer2.tag": "连接层",
-    "stack.layer2.title": "MCP 连接器 · 外部 Agent · 封臣产品",
+    "stack.layer2.title": "MCP 连接器 · 外部 Agent · 执行 Agent 产品",
     "stack.layer2.desc":
-      "pr-helper、loom、atlas——各自独立仓库与部署，以战报形式回流到 Zeus。",
+      "pr-helper、loom、atlas——各自独立仓库与部署，以任务产物回传的形式回传到 Zeus。",
     "stack.layer1.tag": "数据层",
-    "stack.layer1.title": "Realm 目录 · Vault 宝库 · Map 清单 · 备份",
+    "stack.layer1.title": "Realm 目录 · Vault 备份载体 · Map 清单 · 备份",
     "stack.layer1.desc":
       "你指一个目录，它就是数据库。备份是第一公民。",
 
     "dual.bar": "同一引擎，两套治理",
-    "dual.title": "同一套原语，不同的主权。",
+    "dual.title": "同一套原语，不同的治理。",
     "dual.sub":
       "个人版与企业版共用全部五层。唯一的差别，是谁握着钥匙、谁有权审计。",
     "dual.personal.tag": "个人 Realm",
-    "dual.personal.title": "记忆的避风港",
+    "dual.personal.title": "记忆的安全载体",
     "dual.personal.desc":
-      "单一主权。你的记忆、日记、藏宝图——加密、备份，并按你设定的条件传承。",
+      "单一所有者。你的记忆、日记、恢复协议——加密、备份，并按你设定的条件传承。",
     "dual.personal.p1": "单一所有者目录",
     "dual.personal.p2": "日记即记忆备份",
-    "dual.personal.p3": "可传承的藏宝图",
+    "dual.personal.p3": "可传承的恢复协议",
     "dual.enterprise.tag": "企业 Realm",
     "dual.enterprise.title": "即插即用的虚拟部门",
     "dual.enterprise.desc":
@@ -231,12 +231,12 @@ export const ui = {
     "dual.enterprise.p2": "人走，知识不走",
     "dual.enterprise.p3": "可审计，数据不出域",
 
-    "map.bar": "藏宝图",
-    "map.title": "藏宝图，即恢复协议。",
+    "map.bar": "恢复协议",
+    "map.title": "恢复协议，即备份与恢复契约。",
     "map.sub":
-      "Zeus 不在云端存你的宝藏。它只存一份加密清单与回到宝库的路线图——图在你手，Zeus 只保管图的备份。",
+      "Zeus 不在云端存你的数据。它只存一份加密清单与回到备份载体的恢复指引——清单在你手，Zeus 只保管清单的备份。",
     "map.p1":
-      "存清单，不存宝藏：加密记录你拥有什么、它在哪、如何恢复。",
+      "存清单，不存数据：加密记录你拥有什么、它在哪、如何恢复。",
     "map.p2": "日记即备份：记忆以故事写下，以事件回放。",
     "map.p3":
       "数据二极管：个人域与企业域，未经授权绝不互通。",
@@ -248,7 +248,7 @@ export const ui = {
     "cta.title": "带上你的目录来。",
     "cta.sub":
       "不用迁移，不被锁定。指给 Zeus 一个目录，操作系统就立起来；拿走目录，Zeus 可被替换——这正是重点。",
-    "cta.list1": "首个封臣 pr-helper，验收中",
+    "cta.list1": "首个执行 Agent pr-helper，验收中",
     "cta.list2": "Realm 读写/检索接口规约",
     "cta.list3": "A2A Agent Card + 任务派发草案",
     "cta.list4": "上线即双语（中 / 英）",
@@ -262,11 +262,11 @@ export const ui = {
     "cta.note":
       "每封申请都会读。不发营销邮件——只偶尔发一份 changelog。",
 
-    "foot.tag": "你的目录即王座，Agent 皆是封臣。",
-    "foot.nav.tenets": "三纲",
+    "foot.tag": "你的目录即数据底座，Agent 皆由你调度。",
+    "foot.nav.tenets": "三原语",
     "foot.nav.stack": "架构",
     "foot.nav.dual": "双态",
-    "foot.nav.map": "藏宝图",
+    "foot.nav.map": "恢复协议",
     "foot.nav.cta": "准入",
     "foot.nav.privacy": "隐私",
     "foot.nav.terms": "条款",
