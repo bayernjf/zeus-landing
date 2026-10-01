@@ -1,6 +1,6 @@
 # Zeus — Landing
 
-Zeus 产品落地页：以你的目录为王座，Agent 皆是你的封臣。
+Zeus 产品落地页：以你的数据目录为底座，Agent 皆由你调度。
 
 - 线上：https://zeus.bayjf.com （English）· https://zeus.bayjf.com/zh/ （简体中文）
 - 产品主仓库：`zeus/`（与本目录平级，见 `zeus/docs/product-portrait.md`）
@@ -68,8 +68,8 @@ Pages 项目 `zeus-landing` 已连接 GitHub 仓库 `bayernjf/zeus-landing`：�
 - `@astrojs/sitemap` 生成带 hreflang 互指的 sitemap
 - 构建时截图产出 og:image（`scripts/shot.mjs`），同时作为 bayjf 主站卡片封面
 - `public/robots.txt` 显式放行 GPTBot、ClaudeBot、PerplexityBot、CCBot 等 AI 爬虫
-- `public/llms.txt`（中文）与 `public/llms-en.txt`（英文）自述产品定义、三纲、两种数据域、
-  五层架构与封臣协议，供答案引擎直接引用
+- `public/llms.txt`（中文）与 `public/llms-en.txt`（英文）自述产品定义、能力接入三原语、两种数据域、
+  五层架构与注册握手协议，供答案引擎直接引用
 
 ## 项目约定
 
