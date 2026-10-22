@@ -15,7 +15,7 @@ export const ui = {
   en: {
     "meta.title": "Zeus — the agent OS built on your data directory",
     "meta.description":
-      "Zeus is an operating system built on your own data directory. Agents work under your direction; MCP connects the world, Skills compound, and A2A holds them together. For individuals: a secure carrier for memory and a recovery protocol you can pass on. For teams: a plug-in virtual department that onboards on day one.",
+      "Zeus is an operating system built on your own data directory. Agents work under your direction; MCP connects the world, Skills compound, and A2A holds them together. For individuals: a secure carrier for memory and a recovery protocol you can pass on. For teams: a plug-in virtual department with graded decision approvals, a signed audit chain, and a typed integration SDK.",
 
     "nav.langSwitch": "中文",
     "hud.home": "Zeus home",
@@ -36,7 +36,7 @@ export const ui = {
     "hero.meta.layers": "layers",
     "hero.meta.modes": "modes",
     "hero.meta.flowPre": "data stays in your ",
-    "hero.meta.flowPost": "realm",
+    "hero.meta.flowPost": "",
     "hero.map.bar": "SOVEREIGN REALM · LIVE",
 
     "tenets.bar": "THREE ACCESS PRIMITIVES",
@@ -65,9 +65,9 @@ export const ui = {
     "stack.layer5.desc":
       "Emotional value and belonging, not slogans — every story points to a recovery action.",
     "stack.layer4.tag": "COLLABORATE",
-    "stack.layer4.title": "Team · A2A delegation · Oversight deck",
+    "stack.layer4.title": "Organization v1 · A2A delegation · Oversight deck",
     "stack.layer4.desc":
-      "A multi-agent system, with you as the operator. Approve, reject, redirect.",
+      "Departments, positions and task dispatch with graded D0–D3 approvals. You operate; agents execute.",
     "stack.layer3.tag": "GROW",
     "stack.layer3.title": "Skill packs · Mentor onboarding · Agent registry",
     "stack.layer3.desc":
@@ -117,10 +117,10 @@ export const ui = {
     "cta.title": "Bring your directory.",
     "cta.sub":
       "No migration, no lock-in. Point Zeus at a folder and the OS stands it up. Take the folder away and Zeus is replaceable — that is the point.",
-    "cta.list1": "First execution agent: pr-helper, now in acceptance",
-    "cta.list2": "Realm read / write / retrieve interface spec",
-    "cta.list3": "A2A agent-card + task dispatch draft",
-    "cta.list4": "Bilingual (en / zh) on day one",
+    "cta.list1": "Decision API v1 — graded D0–D3 approvals, SLA timeouts, idempotent replay",
+    "cta.list2": "Organization API v1 — departments, positions, task dispatch",
+    "cta.list3": "Per-record signed JSONL audit chain — tamper-evident, replayable",
+    "cta.list4": "Typed zeus-client SDK — zero-dependency TypeScript integration",
     "cta.email": "your email",
     "cta.size": "what are you?",
     "cta.size1": "individual",
@@ -146,7 +146,7 @@ export const ui = {
   zh: {
     "meta.title": "Zeus —— 以你的数据目录为底座的多 Agent 操作系统",
     "meta.description":
-      "Zeus 是一个以用户数据目录为底座的操作系统：MCP 连接世界，Skill 持续成长，A2A 让 Agent 互相协作，而你始终是操作者。对个人，是记忆的安全载体与可传承的备份与恢复协议；对企业，是即插即用、伴随成长的虚拟部门。",
+      "Zeus 是一个以用户数据目录为底座的操作系统：MCP 连接世界，Skill 持续成长，A2A 让 Agent 互相协作，而你始终是操作者。对个人，是记忆的安全载体与可传承的备份与恢复协议；对企业，是即插即用的虚拟部门：分级决策审批、逐条签名审计链与类型化集成 SDK。",
 
     "nav.langSwitch": "EN",
     "hud.home": "Zeus 首页",
@@ -167,7 +167,7 @@ export const ui = {
     "hero.meta.layers": "层",
     "hero.meta.modes": "模式",
     "hero.meta.flowPre": "数据留守你的",
-    "hero.meta.flowPost": "Realm",
+    "hero.meta.flowPost": "",
     "hero.map.bar": "主权数据域 · 在线",
 
     "tenets.bar": "能力接入三原语",
@@ -196,9 +196,9 @@ export const ui = {
     "stack.layer5.desc":
       "情绪价值与归属感，不靠口号——每一段叙事都指向一个恢复动作。",
     "stack.layer4.tag": "协作层",
-    "stack.layer4.title": "编制(Team) · 委托(A2A) · 监督台",
+    "stack.layer4.title": "组织能力 v1 · 委托(A2A) · 监督台",
     "stack.layer4.desc":
-      "一个多 Agent 协作系统，你是操作者。批准、驳回、改道。",
+      "部门、岗位与任务派发，D0–D3 分级审批。你操作，Agent 执行。",
     "stack.layer3.tag": "能力层",
     "stack.layer3.title": "Skill 技能包 · Mentor 带教 · Agent 注册",
     "stack.layer3.desc":
@@ -248,10 +248,10 @@ export const ui = {
     "cta.title": "带上你的目录来。",
     "cta.sub":
       "不用迁移，不被锁定。指给 Zeus 一个目录，操作系统就立起来；拿走目录，Zeus 可被替换——这正是重点。",
-    "cta.list1": "首个执行 Agent pr-helper，验收中",
-    "cta.list2": "Realm 读写/检索接口规约",
-    "cta.list3": "A2A Agent Card + 任务派发草案",
-    "cta.list4": "上线即双语（中 / 英）",
+    "cta.list1": "决策 API v1——D0–D3 分级审批、SLA 超时、幂等回放",
+    "cta.list2": "组织 API v1——部门、岗位与任务派发",
+    "cta.list3": "逐条签名 JSONL 审计链——防篡改、可回放",
+    "cta.list4": "类型化 zeus-client SDK——零依赖 TypeScript 集成",
     "cta.email": "你的邮箱",
     "cta.size": "你是谁？",
     "cta.size1": "个人",
