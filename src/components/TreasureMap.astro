@@ -13,32 +13,23 @@ const t = useTranslations(getLangFromUrl(Astro.url));
     <div class="map">
       <div class="panel panel--riveted map__manifest">
         <div class="panel__bar">
-          <span>~/.zeus/map.enc</span>
+          <span>~/.zeus/map.json</span>
           <span class="led" data-c="power" aria-hidden="true"></span>
         </div>
         <pre class="map__body" aria-hidden="true">{`{
-  "version": 1,
-  "cipher": "age-encryption.org/v1",
-  "sealed_by": "your-master-key",
-  "vaults": [
-    { "name": "personal",
-      "at": "~/zeus-realms/personal/vault",
-      "objects": 142,
-      "sha256": "9f2c…e41a" },
-    { "name": "diary",
-      "at": "~/zeus-realms/personal/diary",
-      "events": 1204,
-      "sha256": "77bd…0c3f" }
-  ],
-  "recovery": {
-    "diary_as_backup": true,
-    "inheritance": "conditional-later"
-  }
+  "alg": "aes-256-gcm",
+  "kdf": "scrypt",
+  "format": "zeus-treasure-map",
+  "kdfParams": { "N": 131072, "r": 8, "p": 1 },
+  "salt": "k2x9…f0d1",
+  "iv": "7d4c…c1a8",
+  "tag": "a42f…e002",
+  "ciphertext": "m9Q…(references only, no content)"
 }`}</pre>
         <div class="map__foot">
-          <span class="readout">142 OBJECTS</span>
+          <span class="readout">AES-256-GCM</span>
           <span class="map__dot">·</span>
-          <span class="readout">1204 EVENTS</span>
+          <span class="readout">SCRYPT N=131072</span>
           <span class="map__dot">·</span>
           <span class="map__sealed">SEALED · KEY NEVER LEAVES YOU</span>
         </div>
