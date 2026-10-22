@@ -36,7 +36,7 @@ export const ui = {
     "hero.meta.layers": "layers",
     "hero.meta.modes": "modes",
     "hero.meta.flowPre": "data stays in your ",
-    "hero.meta.flowPost": "realm",
+    "hero.meta.flowPost": "",
     "hero.map.bar": "SOVEREIGN REALM · LIVE",
 
     "tenets.bar": "THREE ACCESS PRIMITIVES",
@@ -167,7 +167,7 @@ export const ui = {
     "hero.meta.layers": "层",
     "hero.meta.modes": "模式",
     "hero.meta.flowPre": "数据留守你的",
-    "hero.meta.flowPost": "Realm",
+    "hero.meta.flowPost": "",
     "hero.map.bar": "主权数据域 · 在线",
 
     "tenets.bar": "能力接入三原语",
