@@ -23,7 +23,14 @@ const t = useTranslations(getLangFromUrl(Astro.url));
             <li>{t("dual.personal.p1")}</li>
             <li>{t("dual.personal.p2")}</li>
             <li>{t("dual.personal.p3")}</li>
+            <li>{t("dual.personal.p4")}</li>
           </ul>
+          <a
+            class="dual-card__link"
+            href="https://github.com/bayernjf/zeus/blob/dev/docs/runbooks/personal-mcp-access.md"
+            target="_blank"
+            rel="noopener"
+          >{t("dual.personal.accessLink")}</a>
         </div>
       </article>
 
@@ -102,6 +109,19 @@ const t = useTranslations(getLangFromUrl(Astro.url));
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
     box-shadow: 0 0 8px var(--data);
   }
+
+  .dual-card__link {
+    display: inline-block;
+    margin-top: 16px;
+    font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    color: var(--power);
+    text-decoration: none;
+    border-bottom: 1px dashed color-mix(in srgb, var(--power) 55%, transparent);
+    transition: opacity 0.15s ease;
+  }
+  .dual-card__link:hover { opacity: 0.75; }
 
   @media (max-width: 860px) {
     .dual { grid-template-columns: 1fr; }
