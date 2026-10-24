@@ -85,13 +85,16 @@ export const ui = {
     "dual.title": "Same primitives. Different governance.",
     "dual.sub":
       "Personal and enterprise realms share every layer. The only thing that changes is who holds the keys and who may audit.",
-    "dual.personal.tag": "PERSONAL REALM",
-    "dual.personal.title": "A secure carrier for memory",
+    "dual.personal.tag": "PERSONAL AGENT · PERSONAL REALM",
+    "dual.personal.title": "Your personal agent, anchored in memory",
     "dual.personal.desc":
-      "Single owner. Your memories, your diary, your recovery protocol — encrypted, backed up, and inheritable under conditions you set.",
+      "This realm is your personal agent. Single owner — your memories, your diary, your recovery protocol — encrypted, backed up, and inheritable under conditions you set.",
     "dual.personal.p1": "Single-owner directory",
     "dual.personal.p2": "Diary as narrative backup",
     "dual.personal.p3": "A recovery protocol you can pass on",
+    "dual.personal.p4":
+      "Claude Desktop / Cursor can attach read-only over stdio MCP in one step",
+    "dual.personal.accessLink": "Read the MCP access runbook",
     "dual.enterprise.tag": "ENTERPRISE REALM",
     "dual.enterprise.title": "A virtual department",
     "dual.enterprise.desc":
@@ -216,13 +219,16 @@ export const ui = {
     "dual.title": "同一套原语，不同的治理。",
     "dual.sub":
       "个人版与企业版共用全部五层。唯一的差别，是谁握着钥匙、谁有权审计。",
-    "dual.personal.tag": "个人 Realm",
-    "dual.personal.title": "记忆的安全载体",
+    "dual.personal.tag": "Personal Agent · 个人 Realm",
+    "dual.personal.title": "你的 Personal Agent，锚定在记忆之上",
     "dual.personal.desc":
-      "单一所有者。你的记忆、日记、恢复协议——加密、备份，并按你设定的条件传承。",
+      "这个 Realm 就是你的 Personal Agent。单一所有者——你的记忆、日记、恢复协议——加密、备份，并按你设定的条件传承。",
     "dual.personal.p1": "单一所有者目录",
     "dual.personal.p2": "日记即记忆备份",
     "dual.personal.p3": "可传承的恢复协议",
+    "dual.personal.p4":
+      "Claude Desktop / Cursor 可经只读 stdio MCP 一步接入",
+    "dual.personal.accessLink": "阅读 MCP 接入手册",
     "dual.enterprise.tag": "企业 Realm",
     "dual.enterprise.title": "即插即用的虚拟部门",
     "dual.enterprise.desc":
