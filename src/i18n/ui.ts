@@ -140,6 +140,7 @@ export const ui = {
     "foot.nav.dual": "Two regimes",
     "foot.nav.map": "Recovery protocol",
     "foot.nav.cta": "Access",
+    "foot.nav.case": "Case study",
     "foot.nav.privacy": "Privacy",
     "foot.nav.terms": "Terms",
 
@@ -274,6 +275,7 @@ export const ui = {
     "foot.nav.dual": "双态",
     "foot.nav.map": "恢复协议",
     "foot.nav.cta": "准入",
+    "foot.nav.case": "案例页",
     "foot.nav.privacy": "隐私",
     "foot.nav.terms": "条款",
 
