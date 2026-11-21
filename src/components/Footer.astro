@@ -9,6 +9,10 @@ const t = useTranslations(lang);
 const altPath = getAltLangPath(Astro.url, lang);
 
 const home = localizePath("/", lang);
+const caseUrl =
+  lang === "zh"
+    ? "https://bayjf.com/zh/products/zeus/"
+    : "https://bayjf.com/products/zeus/";
 const year = 2026;
 ---
 
@@ -27,6 +31,7 @@ const year = 2026;
       <a href={`${home}#dual`}>{t("foot.nav.dual")}</a>
       <a href={`${home}#map`}>{t("foot.nav.map")}</a>
       <a href={`${home}#cta`}>{t("foot.nav.cta")}</a>
+      <a href={caseUrl}>{t("foot.nav.case")}</a>
       <a href={localizePath("/privacy", lang)}>{t("foot.nav.privacy")}</a>
       <a href={localizePath("/terms", lang)}>{t("foot.nav.terms")}</a>
     </nav>
